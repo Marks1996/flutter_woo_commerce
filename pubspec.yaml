@@ -51,6 +51,7 @@ dependencies:
   extended_image: ^8.1.0
   # 国际化
   intl: ^0.18.1
+  flutter_screenutil: ^5.9.0
 
 dev_dependencies:
   flutter_test:
