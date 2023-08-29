@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:get/get.dart';
 
 import 'common/index.dart';
@@ -6,8 +7,8 @@ import 'common/index.dart';
 class Global {
   static Future<void> init() async {
     // 初始化
-    WidgetsFlutterBinding.ensureInitialized();
-    
+    final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
+    FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
     await Future.wait([
       // 工具类
       Storage().init(),
@@ -18,6 +19,5 @@ class Global {
 
     // Dio服务
     Get.put<WPHttpService>(WPHttpService());
-
   }
 }
