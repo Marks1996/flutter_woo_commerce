@@ -3,11 +3,11 @@ import 'package:get/get.dart';
 
 class StylesIndexController extends GetxController {
   StylesIndexController();
+
   // 多语言
-  onLanguageSelected() {
+  void onLanguageSelected() {
     // var en = Translation.supportedLocales[0];
     // var zh = Translation.supportedLocales[1];
-
     final [en, zh] = Translation.supportedLocales;
     ConfigService.to.onLocaleUpdate(
         ConfigService.to.locale.toLanguageTag() == en.toLanguageTag()
@@ -16,26 +16,20 @@ class StylesIndexController extends GetxController {
     update(["styles_index"]);
   }
 
+  // 主题
+  void onThemeSelected() async {
+    await ConfigService.to.switchThemeModel();
+    update(["styles_index"]);
+  }
+
   _initData() {
     Storage().remove(Constants.storageLanguageCode);
     update(["styles_index"]);
   }
-
-  void onTap() {}
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
 
   @override
   void onReady() {
     super.onReady();
     _initData();
   }
-
-  // @override
-  // void onClose() {
-  //   super.onClose();
-  // }
 }
