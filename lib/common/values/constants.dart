@@ -8,4 +8,5 @@ class Constants {
   // 本地存储key
   static const storageLanguageCode = 'language_code';
   static const storageThemeCode = 'theme_code';
+  static const storageAlreadyOpen = 'already_open'; // 首次打开
 }

@@ -12,6 +12,10 @@ class RoutePages {
   // 列表
   static List<GetPage> list = [
     GetPage(
+      name: RouteNames.main,
+      page: () => const MainPage(),
+    ),
+    GetPage(
       name: RouteNames.cartApplyPromoCode,
       page: () => const ApplyPromoCodePage(),
     ),
@@ -130,10 +134,6 @@ class RoutePages {
     GetPage(
       name: RouteNames.systemLogin,
       page: () => const LoginPage(),
-    ),
-    GetPage(
-      name: RouteNames.systemMain,
-      page: () => const MainPage(),
     ),
     GetPage(
       name: RouteNames.systemRegister,

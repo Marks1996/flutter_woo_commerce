@@ -9,16 +9,22 @@ import '../index.dart';
 class ConfigService extends GetxService {
   // 这是一个单例写法
   static ConfigService get to => Get.find();
-
   PackageInfo? _platform;
   String get version => _platform?.version ?? '-';
-
   // 当前语言
   // Locale locale = PlatformDispatcher.instance.locale;
   Locale locale = Translation.locale ?? PlatformDispatcher.instance.locale;
   // 主题
   final RxBool _isDarkModel = Get.isDarkMode.obs;
   bool get isDarkModel => _isDarkModel.value;
+
+  /// 是否首次打开
+  bool get isAlreadyOpen => Storage().getBool(Constants.storageAlreadyOpen);
+
+  /// 标记已打开app
+  void setAlreadyOpen() {
+    Storage().setBool(Constants.storageAlreadyOpen, true);
+  }
 
   @override
   void onReady() {
@@ -28,12 +34,13 @@ class ConfigService extends GetxService {
     initTheme();
   }
 
-  // 初始化
+  /// 初始化
   Future<ConfigService> init() async {
     await getPlatform();
     return this;
   }
 
+  /// 获取平台信息
   Future<void> getPlatform() async {
     _platform = await PackageInfo.fromPlatform();
   }
