@@ -4,8 +4,6 @@ import 'package:flutter_woo_commerce/common/index.dart';
 import 'package:flutter_woo_commerce/pages/index.dart';
 import 'package:get/get.dart';
 
-import 'index.dart';
-
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
 

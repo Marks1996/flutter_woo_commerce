@@ -2,7 +2,6 @@ import 'package:encrypt/encrypt.dart';
 
 import '../index.dart';
 
-
 /// 加密类
 class EncryptUtil {
   static final EncryptUtil _instance = EncryptUtil._internal();

@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:shared_preferences/shared_preferences.dart';
 
 /// kv离线存储
@@ -39,5 +41,9 @@ class Storage {
 
   Future<bool> remove(String key) async {
     return await _prefs.remove(key);
+  }
+
+  Future<bool> setJson(String key, Object value) async {
+    return await _prefs.setString(key, jsonEncode(value));
   }
 }

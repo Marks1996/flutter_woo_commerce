@@ -13,7 +13,7 @@ class Global {
 
     // 系统样式
     setSystemUi();
-    
+
     await Future.wait([
       // 工具类
       Storage().init(),

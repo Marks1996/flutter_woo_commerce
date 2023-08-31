@@ -53,7 +53,8 @@ Map<String, String> localeEn = {
   LocaleKeys.validatorEmail: 'The field must be an email',
   LocaleKeys.validatorMin: 'Length cannot be less than @size',
   LocaleKeys.validatorMax: 'Length cannot be greater than @size',
-  LocaleKeys.validatorPassword: 'password must have between @min and @max digits',
+  LocaleKeys.validatorPassword:
+      'password must have between @min and @max digits',
 
   // 注册PIN - register pin
   LocaleKeys.registerPinTitle: 'Verification',
@@ -66,10 +67,16 @@ Map<String, String> localeEn = {
   LocaleKeys.loginBackDesc: 'Sign in to continue',
   LocaleKeys.loginBackFieldEmail: 'Name',
   LocaleKeys.loginBackFieldPassword: 'Password',
-  
+
   // APP 导航
   LocaleKeys.tabBarHome: 'Home',
   LocaleKeys.tabBarCart: 'Cart',
   LocaleKeys.tabBarMessage: 'Message',
   LocaleKeys.tabBarProfile: 'Profile',
+
+  // 商品 - 首页
+  LocaleKeys.gHomeSearch: 'Search Product',
+  LocaleKeys.gHomeFlashSell: 'Flash Sell',
+  LocaleKeys.gHomeNewProduct: 'New Product',
+  LocaleKeys.gHomeMore: 'ALL',
 };
