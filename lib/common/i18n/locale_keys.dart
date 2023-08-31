@@ -14,7 +14,7 @@ class LocaleKeys {
 
   // 样式
   static const stylesTitle = 'styles_title';
-  
+
   // 欢迎页
   static const welcomeOneTitle = 'welcome_one_title';
   static const welcomeOneDesc = 'welcome_one_desc';
@@ -25,7 +25,7 @@ class LocaleKeys {
   static const welcomeSkip = 'welcome_skip';
   static const welcomeNext = 'welcome_next';
   static const welcomeStart = 'welcome_start';
-  
+
   // 登录、注册 - 通用
   static const loginForgotPassword = 'login_forgot_password';
   static const loginSignIn = 'login_sign_in';
@@ -48,7 +48,7 @@ class LocaleKeys {
   static const validatorMin = 'validator_min';
   static const validatorMax = 'validator_max';
   static const validatorPassword = 'validator_password';
-  
+
   // 注册PIN - register pin
   static const registerPinTitle = 'register_pin_title';
   static const registerPinDesc = 'register_pin_desc';

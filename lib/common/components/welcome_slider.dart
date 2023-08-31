@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce/common/index.dart';
 
-
 /// 欢迎 slider
 class WelcomeSliderWidget extends StatelessWidget {
   /// 项目

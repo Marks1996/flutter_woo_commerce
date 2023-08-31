@@ -7,7 +7,7 @@ import 'index.dart';
 class TextFormPage extends GetView<TextFormController> {
   const TextFormPage({Key? key}) : super(key: key);
 
-   Widget _buildTextForm() {
+  Widget _buildTextForm() {
     return Form(
         key: controller.formKey, //设置globalKey，用于后面获取FormState
         autovalidateMode: AutovalidateMode.onUserInteraction,

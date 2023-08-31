@@ -19,16 +19,19 @@ Map<String, String> localeZh = {
 
   // welcome 欢迎
   LocaleKeys.welcomeOneTitle: '选择您喜欢的产品',
-  LocaleKeys.welcomeOneDesc: 'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeOneDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
   LocaleKeys.welcomeTwoTitle: '完成您的购物',
-  LocaleKeys.welcomeTwoDesc: 'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeTwoDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
   LocaleKeys.welcomeThreeTitle: '足不出户的购物体验',
-  LocaleKeys.welcomeThreeDesc: 'Contrary to popular belief, Lorem Ipsum is not simply random text',
+  LocaleKeys.welcomeThreeDesc:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text',
   LocaleKeys.welcomeSkip: '跳过',
   LocaleKeys.welcomeNext: '下一页',
   LocaleKeys.welcomeStart: '立刻开始',
-  
-    // 登录、注册 - 通用
+
+  // 登录、注册 - 通用
   LocaleKeys.loginForgotPassword: '忘记密码?',
   LocaleKeys.loginSignIn: '登 陆',
   LocaleKeys.loginSignUp: '注 册',
@@ -44,7 +47,7 @@ Map<String, String> localeZh = {
   LocaleKeys.registerFormFirstName: '姓',
   LocaleKeys.registerFormLastName: '名',
   LocaleKeys.registerHaveAccount: '你有现成账号?',
-  
+
   // 验证提示
   LocaleKeys.validatorRequired: '字段不能为空',
   LocaleKeys.validatorEmail: '请输入 email 格式',
