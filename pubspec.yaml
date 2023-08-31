@@ -60,6 +60,8 @@ dependencies:
   validatorless: ^1.2.3
   # pin输入框
   pinput: ^3.0.1
+  # 吐司弹窗
+  flutter_easyloading: ^3.0.5
 
 dev_dependencies:
   flutter_test:
