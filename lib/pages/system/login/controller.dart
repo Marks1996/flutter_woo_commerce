@@ -20,6 +20,18 @@ class LoginController extends GetxController {
       try {
         Loading.show();
 
+        // api 请求
+        UserTokenModel res = await UserApi.login(UserLoginReq(
+          username: userNameController.text,
+          password: passwordController.text,
+        ));
+
+        // 本地保存 token
+        await UserService.to.setToken(res.token!);
+        // 获取用户资料
+        await UserService.to.getProfile();
+
+        Loading.success();
         Get.back(result: true);
       } finally {
         Loading.dismiss();
@@ -35,13 +47,6 @@ class LoginController extends GetxController {
   _initData() {
     update(["login"]);
   }
-
-  void onTap() {}
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
 
   @override
   void onReady() {

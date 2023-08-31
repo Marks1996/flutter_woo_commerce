@@ -53,7 +53,8 @@ Map<String, String> localeEn = {
   LocaleKeys.validatorEmail: 'The field must be an email',
   LocaleKeys.validatorMin: 'Length cannot be less than @size',
   LocaleKeys.validatorMax: 'Length cannot be greater than @size',
-  LocaleKeys.validatorPassword: 'password must have between @min and @max digits',
+  LocaleKeys.validatorPassword:
+      'password must have between @min and @max digits',
 
   // 注册PIN - register pin
   LocaleKeys.registerPinTitle: 'Verification',

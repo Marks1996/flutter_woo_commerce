@@ -19,6 +19,8 @@ class Global {
 
     // Dio服务
     Get.put<WPHttpService>(WPHttpService());
+    // 用户
+    Get.put<UserService>(UserService());
 
     // 吐司弹窗
     Loading();
