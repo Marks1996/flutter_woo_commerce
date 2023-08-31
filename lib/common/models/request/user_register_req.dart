@@ -13,7 +13,8 @@ class UserRegisterReq {
     this.lastName,
   });
 
-  factory UserRegisterReq.fromJson(Map<String, dynamic> json) => UserRegisterReq(
+  factory UserRegisterReq.fromJson(Map<String, dynamic> json) =>
+      UserRegisterReq(
         username: json['username'] as String?,
         password: json['password'] as String?,
         email: json['email'] as String?,
