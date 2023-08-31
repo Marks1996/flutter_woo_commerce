@@ -140,7 +140,8 @@ class IconWidget extends StatelessWidget {
           assetName!,
           width: width ?? size,
           height: height ?? size,
-          // color: color,
+          colorFilter:
+              color != null ? ColorFilter.mode(color!, BlendMode.srcIn) : null,
           fit: fit ?? BoxFit.contain,
         );
         break;
@@ -170,6 +171,9 @@ class IconWidget extends StatelessWidget {
     if (isDot == true) {
       return Badge(
         position: BadgePosition.bottomEnd(bottom: 0, end: -2),
+        badgeStyle: BadgeStyle(
+          badgeColor: AppColors.primary,
+        ),
         child: icon,
       );
     }
@@ -183,6 +187,9 @@ class IconWidget extends StatelessWidget {
             color: AppColors.onPrimary,
             fontSize: 9,
           ),
+        ),
+        badgeStyle: BadgeStyle(
+          badgeColor: AppColors.primary,
         ),
         position: BadgePosition.topEnd(top: -7, end: -8),
         child: icon,
