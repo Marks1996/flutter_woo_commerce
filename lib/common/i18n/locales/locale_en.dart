@@ -51,4 +51,10 @@ Map<String, String> localeEn = {
   LocaleKeys.validatorMin: 'Length cannot be less than @size',
   LocaleKeys.validatorMax: 'Length cannot be greater than @size',
   LocaleKeys.validatorPassword: 'password must have between @min and @max digits',
+  
+  // 注册PIN - register pin
+  LocaleKeys.registerPinTitle: 'Verification',
+  LocaleKeys.registerPinDesc: 'we will send you a Pin to continue your account',
+  LocaleKeys.registerPinFormTip: 'Pin',
+  LocaleKeys.registerPinButton: 'Submit',
 };
