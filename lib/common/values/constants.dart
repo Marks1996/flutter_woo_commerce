@@ -3,6 +3,10 @@ class Constants {
   // wp 服务器
   static const wpApiBaseUrl = 'https://wpapi.ducafecat.tech';
 
+  // AES
+  static const aesKey = 'aH5aH5bG0dC6aA3oN0cK4aU5jU6aK2lN';
+  static const aesIV = 'hK6eB4aE1aF3gH5q';
+
   // 本地存储key
   static const storageLanguageCode = 'language_code';
   static const storageThemeCode = 'theme_code';

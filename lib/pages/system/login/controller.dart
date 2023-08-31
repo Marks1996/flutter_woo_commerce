@@ -19,11 +19,11 @@ class LoginController extends GetxController {
     if ((formKey.currentState as FormState).validate()) {
       try {
         Loading.show();
-
+        var password = EncryptUtil().aesEncode(passwordController.text);
         // api 请求
         UserTokenModel res = await UserApi.login(UserLoginReq(
           username: userNameController.text,
-          password: passwordController.text,
+          password: password,
         ));
 
         // 本地保存 token

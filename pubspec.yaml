@@ -62,6 +62,8 @@ dependencies:
   pinput: ^3.0.1
   # 吐司弹窗
   flutter_easyloading: ^3.0.5
+  # 加密解密
+  encrypt: ^5.0.1
 
 dev_dependencies:
   flutter_test:
