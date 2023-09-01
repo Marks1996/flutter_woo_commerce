@@ -102,7 +102,14 @@ class HomeController extends GetxController {
   }
 
   // 分类点击事件
-  void onCategoryTap(int categoryId) {}
+  void onCategoryTap(int categoryId) {
+    Get.toNamed(
+      RouteNames.goodsCategory,
+      arguments: {
+        "id": categoryId,
+      },
+    );
+  }
 
   // ALL 点击事件
   void onAllTap(bool featured) {
@@ -173,6 +180,7 @@ class HomeController extends GetxController {
     Storage().setJson(Constants.storageHomeCategories, categoryItems);
     Storage().setJson(Constants.storageHomeFlashSell, flashShellProductList);
     Storage().setJson(Constants.storageHomeNewSell, newProductProductList);
+    Storage().setJson(Constants.storageProductsCategories, categoryItems);
     update(["home"]);
   }
 
