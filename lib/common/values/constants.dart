@@ -20,8 +20,14 @@ class Constants {
   static const storageHomeCategories = 'home_categories';
   static const storageHomeFlashSell = 'home_flash_sell';
   static const storageHomeNewSell = 'home_new_sell';
-  
+
   // 基础数据
   // 商品分类
   static const storageProductsCategories = 'home_categories';
+
+  // 颜色定义
+  static const storageProductsAttributesColors = 'products_attributes_colors';
+
+  // 尺寸定义
+  static const storageProductsAttributesSizes = 'products_attributes_sizes';
 }

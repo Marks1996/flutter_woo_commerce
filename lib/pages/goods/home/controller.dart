@@ -122,7 +122,9 @@ class HomeController extends GetxController {
   }
 
   // 导航点击事件
-  void onAppBarTap() {}
+  void onAppBarTap() {
+    Get.toNamed(RouteNames.searchSearchIndex);
+  }
 
   // 读取缓存
   Future<void> _loadCacheData() async {
@@ -175,12 +177,25 @@ class HomeController extends GetxController {
     // 新商品
     newProductProductList = await ProductApi.products(ProductsReq());
 
+    // 颜色
+    var attributeColors = await ProductApi.attributes(1);
+
+    // 基础数据
+    // 尺寸
+    var attributeSizes = await ProductApi.attributes(2);
+
+    // 保存离线数据
+    // 尺寸定义
+    Storage().setJson(Constants.storageProductsAttributesSizes, attributeSizes);
+
     // 保存离线数据
     Storage().setJson(Constants.storageHomeBanner, bannerItems);
     Storage().setJson(Constants.storageHomeCategories, categoryItems);
     Storage().setJson(Constants.storageHomeFlashSell, flashShellProductList);
     Storage().setJson(Constants.storageHomeNewSell, newProductProductList);
     Storage().setJson(Constants.storageProductsCategories, categoryItems);
+    Storage()
+        .setJson(Constants.storageProductsAttributesColors, attributeColors);
     update(["home"]);
   }
 

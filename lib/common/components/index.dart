@@ -10,3 +10,7 @@ export 'product_item.dart';
 export 'refresher.dart';
 export 'placehold.dart';
 export 'appbar.dart';
+export 'gallery.dart';
+export 'icon_text.dart';
+export 'colors_list.dart';
+export 'tags_list.dart';

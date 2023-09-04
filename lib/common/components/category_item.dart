@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_woo_commerce/common/index.dart';
 
-
 /// 分类导航项
 class CategoryListItemWidget extends StatelessWidget {
   /// 分类数据
