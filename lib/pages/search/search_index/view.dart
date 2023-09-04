@@ -6,12 +6,35 @@ import 'index.dart';
 
 class SearchIndexPage extends GetView<SearchIndexController> {
   const SearchIndexPage({Key? key}) : super(key: key);
+  // 列表
+  Widget _buildList() {
+    return ListView.separated(
+      itemBuilder: (BuildContext context, int index) {
+        TagsModel item = controller.tagsList[index];
+        return _buildListItem(item);
+      },
+      separatorBuilder: (BuildContext context, int index) {
+        return const Divider();
+      },
+      itemCount: controller.tagsList.length,
+    );
+  }
+
+  // 列表项
+  Widget _buildListItem(TagsModel item) {
+    return ListTile(
+      title: TextWidget.body1(item.name ?? ""),
+      trailing: IconWidget.icon(
+        Icons.north_west,
+        color: AppColors.primary,
+      ),
+      onTap: () => controller.onListItemTap(item),
+    );
+  }
 
   // 主视图
   Widget _buildView() {
-    return const Center(
-      child: Text("SearchIndexPage"),
-    );
+    return _buildList();
   }
 
 // 导航栏

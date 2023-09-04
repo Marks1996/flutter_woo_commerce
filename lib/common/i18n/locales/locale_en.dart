@@ -94,4 +94,16 @@ Map<String, String> localeEn = {
   LocaleKeys.gDetailTabReviews: 'Reviews',
   LocaleKeys.gDetailBtnAddCart: 'Add To Cart',
   LocaleKeys.gDetailBtnBuy: 'Buy Now',
+
+  // 搜索
+  LocaleKeys.searchPlaceholder: 'Search Product',
+  LocaleKeys.searchOrder: 'Best Match',
+  LocaleKeys.searchFilter: 'Filter',
+  LocaleKeys.searchFilterPrice: 'Price',
+  LocaleKeys.searchFilterSize: 'Size',
+  LocaleKeys.searchFilterColor: 'Color',
+  LocaleKeys.searchFilterReview: 'Review',
+  LocaleKeys.searchFilterBrand: 'Brand',
+  LocaleKeys.searchFilterGender: 'Gender',
+  LocaleKeys.searchFilterCondition: 'Condition',
 };

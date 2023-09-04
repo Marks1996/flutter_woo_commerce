@@ -45,7 +45,6 @@ class ProductDetailsController extends GetxController
   int _reviewsPage = 1;
   // 评论 页尺寸
   final int _reviewsLimit = 20;
-  
 
   // 读取缓存
   _loadCache() async {
