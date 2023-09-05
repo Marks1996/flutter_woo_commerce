@@ -14,3 +14,4 @@ export 'gallery.dart';
 export 'icon_text.dart';
 export 'colors_list.dart';
 export 'tags_list.dart';
+export 'dropdown.dart';
