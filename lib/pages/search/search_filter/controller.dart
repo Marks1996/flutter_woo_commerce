@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce/common/index.dart';
 import 'package:get/get.dart';
@@ -21,6 +23,135 @@ class SearchFilterController extends GetxController {
   KeyValueModel orderSelected =
       KeyValueModel(key: "rating", value: "Best Match");
 
+  // 价格范围 0~1000
+  final List<double> priceRange = [100, 1000];
+
+  // 尺寸列表
+  List<KeyValueModel<AttributeModel>> sizes = [];
+
+  // 选中尺寸列表
+  List<String> sizeKeys = [];
+
+  // 颜色列表
+  List<KeyValueModel<AttributeModel>> colors = [];
+
+  // 选中颜色列表
+  List<String> colorKeys = [];
+
+  // 星级
+  int starValue = -1;
+
+  // Brand
+  List<KeyValueModel<AttributeModel>> brands = [];
+  List<String> brandKeys = [];
+
+  // Gender
+  List<KeyValueModel<AttributeModel>> genders = [];
+  List<String> genderKeys = [];
+
+  // Condition
+  List<KeyValueModel<AttributeModel>> conditions = [];
+  List<String> conditionKeys = [];
+
+  // 品牌选中
+  void onBrandTap(List<String> keys) {
+    brandKeys = keys;
+    update(["filter_brands"]);
+  }
+
+  // 性别选中
+  void onGenderTap(List<String> keys) {
+    genderKeys = keys;
+    update(["filter_genders"]);
+  }
+
+  // 新旧选中
+  void onConditionTap(List<String> keys) {
+    conditionKeys = keys;
+    update(["filter_conditions"]);
+  }
+
+  // 星级选中
+  void onStarTap(int value) {
+    starValue = value;
+    update(["filter_stars"]);
+  }
+
+  // 颜色选中
+  void onColorTap(List<String> keys) {
+    colorKeys = keys;
+    update(["filter_colors"]);
+  }
+
+  // 尺寸选中
+  void onSizeTap(List<String> keys) {
+    sizeKeys = keys;
+    update(["filter_sizes"]);
+  }
+
+  // 读取缓存
+  void _loadCache() async {
+    // 尺寸列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesSizes);
+      sizes = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesColors);
+      colors = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+
+    // 品牌列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesBrand);
+      brands = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+
+    // 性别列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesGender);
+      genders = jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+
+    // 新旧列表
+    {
+      String result =
+          Storage().getString(Constants.storageProductsAttributesCondition);
+      conditions =
+          jsonDecode(result).map<KeyValueModel<AttributeModel>>((item) {
+        var arrt = AttributeModel.fromJson(item);
+        return KeyValueModel(key: "${arrt.name}", value: arrt);
+      }).toList();
+    }
+  }
+
+  // 价格区间拖动
+  onPriceRangeDragging(
+    int handlerIndex,
+    dynamic lowerValue,
+    dynamic upperValue,
+  ) {
+    priceRange[0] = lowerValue as double;
+    priceRange[1] = upperValue as double;
+    update(["filter_price_range"]);
+  }
+
   // 排序选中
   void onOrderTap(KeyValueModel? val) {
     orderSelected = val!;
@@ -41,12 +172,11 @@ class SearchFilterController extends GetxController {
     update(["search_filter"]);
   }
 
-  void onTap() {}
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
+  @override
+  void onInit() {
+    super.onInit();
+    _loadCache();
+  }
 
   @override
   void onReady() {

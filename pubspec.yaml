@@ -70,6 +70,7 @@ dependencies:
   # rating 打分
   flutter_rating_bar: ^4.0.1
   dropdown_button2: ^2.3.8
+  another_xlider: ^3.0.1
 
 dev_dependencies:
   flutter_test:
