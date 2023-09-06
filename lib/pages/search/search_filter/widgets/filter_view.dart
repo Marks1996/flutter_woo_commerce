@@ -170,7 +170,7 @@ class FilterView extends GetView<SearchFilterController> {
       // 价格
       _buildTitle(LocaleKeys.searchFilterPrice.tr),
       _buildPriceRange(),
-      
+
       // 尺寸
       _buildTitle(LocaleKeys.searchFilterSize.tr),
       _buildSizes(),
@@ -194,6 +194,16 @@ class FilterView extends GetView<SearchFilterController> {
       // 新旧
       _buildTitle(LocaleKeys.searchFilterCondition.tr),
       _buildConditions(),
+
+      // 应用按钮
+      const Divider(),
+      ButtonWidget.primary(
+        LocaleKeys.commonBottomApply.tr,
+        onTap: controller.onFilterApplyTap,
+      ).tight(
+        width: 75,
+        height: 25,
+      ),
     ]
         .toColumn(
           crossAxisAlignment: CrossAxisAlignment.start,
