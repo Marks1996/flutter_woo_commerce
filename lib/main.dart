@@ -35,8 +35,10 @@ class MyApp extends StatelessWidget {
             title: 'Flutter Demo',
 
             // 样式
-            theme:
-                ConfigService.to.isDarkModel ? AppTheme.dark : AppTheme.light,
+            theme: AppTheme.light,
+            darkTheme: AppTheme.dark,
+            themeMode:
+                ConfigService.to.isDarkModel ? ThemeMode.dark : ThemeMode.light,
 
             initialRoute: RouteNames.systemSplash,
             getPages: RoutePages.list,

@@ -181,6 +181,7 @@ class IconWidget extends StatelessWidget {
     // 文字、数字
     if (badgeString != null) {
       return Badge(
+        badgeAnimation: const BadgeAnimation.fade(toAnimate: false),
         badgeContent: Text(
           badgeString!,
           style: TextStyle(

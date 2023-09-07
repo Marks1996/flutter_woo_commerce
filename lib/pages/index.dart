@@ -11,7 +11,7 @@ export 'goods/product_list/index.dart';
 export 'my/language/index.dart';
 export 'my/my_address/index.dart';
 export 'my/my_index/index.dart';
-export 'my/my_index/profile_edit/index.dart';
+export 'my/profile_edit/index.dart';
 export 'my/order_details/index.dart';
 export 'my/order_list/index.dart';
 export 'my/theme/index.dart';

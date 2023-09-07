@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -66,19 +68,24 @@ class ConfigService extends GetxService {
   // 切换 theme
   Future<void> switchThemeModel() async {
     _isDarkModel.value = !_isDarkModel.value;
-    Get.changeTheme(
-      _isDarkModel.value == true ? AppTheme.dark : AppTheme.light,
+    Get.changeThemeMode(
+      _isDarkModel.value == true ? ThemeMode.dark : ThemeMode.light,
     );
     await Storage().setString(Constants.storageThemeCode,
         _isDarkModel.value == true ? "dark" : "light");
+
+    // 延迟 240 毫秒，强制刷新
+    Timer(240.milliseconds, () {
+      Get.forceAppUpdate();
+    });
   }
 
   // 初始 theme
   void initTheme() {
     var themeCode = Storage().getString(Constants.storageThemeCode);
     _isDarkModel.value = themeCode == "dark" ? true : false;
-    Get.changeTheme(
-      themeCode == "dark" ? AppTheme.dark : AppTheme.light,
+    Get.changeThemeMode(
+      themeCode == "dark" ? ThemeMode.dark : ThemeMode.light,
     );
   }
 }
