@@ -1,4 +1,4 @@
-import '../locale_keys.dart';
+import '../index.dart';
 
 /// 多语言 英文
 Map<String, String> localeEn = {
@@ -123,4 +123,18 @@ Map<String, String> localeEn = {
   LocaleKeys.myBtnStyles: 'Styles',
   LocaleKeys.myBtnBillingAddress: 'Billing address',
   LocaleKeys.myBtnShippingAddress: 'Shipping address',
+
+  // 订单配送地址
+  LocaleKeys.addressViewTitle: '@type address',
+  LocaleKeys.addressFirstName: 'First name',
+  LocaleKeys.addressLastName: 'Last name',
+  LocaleKeys.addressCountry: 'Country',
+  LocaleKeys.addressState: 'State',
+  LocaleKeys.addressPostCode: 'Post code',
+  LocaleKeys.addressCity: 'City',
+  LocaleKeys.addressAddress1: 'Address 1',
+  LocaleKeys.addressAddress2: 'Address 2',
+  LocaleKeys.addressCompany: 'Company',
+  LocaleKeys.addressPhoneNumber: 'Phone number',
+  LocaleKeys.addressEmail: 'Email',
 };

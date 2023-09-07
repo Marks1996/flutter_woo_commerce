@@ -74,7 +74,7 @@ class SearchFilterPage extends GetView<SearchFilterController> {
     return <Widget>[
       // 筛选栏
       _buildFilterBar(),
-      
+
       // 数据列表
       SmartRefresher(
         controller: controller.refreshController, // 刷新控制器

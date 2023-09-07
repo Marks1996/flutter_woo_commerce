@@ -9,6 +9,11 @@ class MyIndexController extends GetxController {
     update(["my_index"]);
   }
 
+  // 地址编辑页 type 1 billing 2 shipping
+  void onToAddress(String type) {
+    Get.toNamed(RouteNames.myMyAddress, arguments: {"type": type});
+  }
+
 // 注销
   void onLogout() {
     UserService.to.logout();

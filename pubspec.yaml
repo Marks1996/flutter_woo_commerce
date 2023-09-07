@@ -70,7 +70,12 @@ dependencies:
   # rating 打分
   flutter_rating_bar: ^4.0.1
   dropdown_button2: ^2.3.8
+  # siderbar
   another_xlider: ^3.0.1
+  # 底部弹出
+  modal_bottom_sheet: ^3.0.0-pre
+  # picker 选择器
+  flutter_picker: ^2.1.0
 
 dev_dependencies:
   flutter_test:
@@ -88,7 +93,7 @@ dev_dependencies:
 flutter_native_splash:
   color: "#ffffff"
   image: "assets/icons/launcher_android.png"
-  
+
 # app 图标
 flutter_icons:
   android: true
