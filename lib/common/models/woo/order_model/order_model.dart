@@ -138,15 +138,15 @@ class OrderModel {
         lineItems: (json['line_items'] as List<dynamic>?)
             ?.map((e) => LineItem.fromJson(e as Map<String, dynamic>))
             .toList(),
-        taxLines: json['tax_lines'] as List<String>?,
+        taxLines: json['tax_lines']?.cast<String>(),
         shippingLines: (json['shipping_lines'] as List<dynamic>?)
             ?.map((e) => ShippingLine.fromJson(e as Map<String, dynamic>))
             .toList(),
-        feeLines: json['fee_lines'] as List<String>?,
+        feeLines: json['fee_lines']?.cast<String>(),
         couponLines: (json['coupon_lines'] as List<dynamic>?)
             ?.map((e) => CouponLine.fromJson(e as Map<String, dynamic>))
             .toList(),
-        refunds: json['refunds'] as List<String>?,
+        refunds: json['refunds']?.cast<String>(),
         dateCreatedGmt: json['date_created_gmt'] as String?,
         dateModifiedGmt: json['date_modified_gmt'] as String?,
         dateCompletedGmt: json['date_completed_gmt'] as dynamic,

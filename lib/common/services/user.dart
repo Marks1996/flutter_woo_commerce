@@ -20,6 +20,10 @@ class UserService extends GetxService {
   /// 是否有令牌 token
   bool get hasToken => token.isNotEmpty;
 
+  /// 送货地址
+  String get shipping =>
+      "${profile.shipping?.address1}, ${profile.shipping?.postcode}, ${profile.shipping?.state}, ${profile.shipping?.country}";
+
   @override
   void onInit() {
     super.onInit();

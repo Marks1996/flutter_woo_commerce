@@ -20,13 +20,13 @@ class ShippingLine {
   });
 
   factory ShippingLine.fromJson(Map<String, dynamic> json) => ShippingLine(
-        taxes: json['taxes'] as List<String>?,
+        taxes: json['taxes']?.cast<String>(),
         totalTax: json['total_tax'] as String?,
         instanceId: json['instance_id'] as String?,
         methodTitle: json['method_title'] as String?,
         id: json['id'] as int?,
         methodId: json['method_id'] as String?,
-        metaData: json['meta_data'] as List<String>?,
+        metaData: json['meta_data']?.cast<String>(),
         total: json['total'] as String?,
       );
 

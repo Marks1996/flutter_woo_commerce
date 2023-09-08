@@ -49,10 +49,10 @@ class LineItem {
         subtotal: json['subtotal'] as String?,
         variationId: json['variation_id'] as int?,
         sku: json['sku'] as String?,
-        metaData: json['meta_data'] as List<String>?,
-        price: json['price'] as double?,
+        metaData: json['meta_data']?.cast<String>(),
+        price: double.tryParse("${json['price']}"),
         taxClass: json['tax_class'] as String?,
-        taxes: json['taxes'] as List<String>?,
+        taxes: json['taxes']?.cast<String>(),
         product: json['product'] == null
             ? null
             : ProductModel.fromJson(json['product'] as Map<String, dynamic>),
