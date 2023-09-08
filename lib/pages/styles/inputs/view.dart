@@ -52,6 +52,32 @@ class InputsPage extends GetView<InputsController> {
         hintText: "搜索",
       ).width(300).paddingBottom(AppSpace.listRow),
 
+      /// 选择框
+      CheckBoxWidget(
+        value: controller.checkVal,
+        onChanged: controller.onCheckBox,
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 all
+      CheckBoxWidget.all(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.title3("全选"),
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 single
+      CheckBoxWidget.single(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.title3("行选择"),
+      ).width(300).paddingBottom(AppSpace.listRow),
+
+      /// 选择框 radio
+      CheckBoxWidget.radio(
+        controller.checkVal,
+        controller.onCheckBox,
+        label: const TextWidget.body1("radio"),
+      ).width(300).paddingBottom(AppSpace.listRow),
       // end
     ].toColumn();
   }

@@ -26,6 +26,8 @@ class Global {
     Get.put<WPHttpService>(WPHttpService());
     // 用户
     Get.put<UserService>(UserService());
+    // 购物车
+    Get.put<CartService>(CartService());
 
     // 吐司弹窗
     Loading();

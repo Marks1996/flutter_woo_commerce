@@ -154,6 +154,25 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
     );
   }
 
+  // 底部按钮
+  Widget _buildButtons() {
+    return <Widget>[
+      // 加入购物车
+      ButtonWidget.secondary(
+        LocaleKeys.gDetailBtnAddCart.tr,
+        onTap: controller.onAddCartTap, // 加入购物车事件
+      ).expanded(),
+      // 间距
+      // SizedBox(width: AppSpace.iconTextLarge),
+      // 立刻购买 Place Order
+    ]
+        .toRow(
+          mainAxisSize: MainAxisSize.max,
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+        )
+        .paddingAll(AppSpace.page);
+  }
+
   // 主视图
   Widget _buildView() {
     return <Widget>[
@@ -168,6 +187,9 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
 
       // TabView 视图
       _buildTabView(),
+
+      // 底部按钮
+      _buildButtons(),
     ].toColumn();
   }
 

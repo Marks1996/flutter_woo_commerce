@@ -49,29 +49,32 @@ class _MainViewGetX extends GetView<MainController> {
         bottomNavigationBar: GetBuilder<MainController>(
           id: 'navigation',
           builder: (controller) {
-            return BuildNavigation(
-              currentIndex: controller.currentIndex,
-              items: [
-                NavigationItemModel(
-                  label: LocaleKeys.tabBarHome.tr,
-                  icon: AssetsSvgs.navHomeSvg,
-                ),
-                NavigationItemModel(
-                  label: LocaleKeys.tabBarCart.tr,
-                  icon: AssetsSvgs.navCartSvg,
-                  count: 3,
-                ),
-                NavigationItemModel(
-                  label: LocaleKeys.tabBarMessage.tr,
-                  icon: AssetsSvgs.navMessageSvg,
-                  count: 9,
-                ),
-                NavigationItemModel(
-                  label: LocaleKeys.tabBarProfile.tr,
-                  icon: AssetsSvgs.navProfileSvg,
-                ),
-              ],
-              onTap: controller.onJumpToPage, // 切换tab事件
+            return Obx(
+              () => BuildNavigation(
+                currentIndex: controller.currentIndex,
+                items: [
+                  NavigationItemModel(
+                    label: LocaleKeys.tabBarHome.tr,
+                    icon: AssetsSvgs.navHomeSvg,
+                  ),
+                  NavigationItemModel(
+                    label: LocaleKeys.tabBarCart.tr,
+                    icon: AssetsSvgs.navCartSvg,
+                    // 购物车数量
+                    count: CartService.to.lineItemsCount,
+                  ),
+                  NavigationItemModel(
+                    label: LocaleKeys.tabBarMessage.tr,
+                    icon: AssetsSvgs.navMessageSvg,
+                    count: 9,
+                  ),
+                  NavigationItemModel(
+                    label: LocaleKeys.tabBarProfile.tr,
+                    icon: AssetsSvgs.navProfileSvg,
+                  ),
+                ],
+                onTap: controller.onJumpToPage, // 切换tab事件
+              ),
             );
           },
         ),

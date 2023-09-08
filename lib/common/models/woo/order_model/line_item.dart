@@ -1,3 +1,5 @@
+import '../../index.dart';
+
 class LineItem {
   int? quantity;
   String? totalTax;
@@ -11,9 +13,10 @@ class LineItem {
   int? variationId;
   String? sku;
   List<String>? metaData;
-  int? price;
+  double? price;
   String? taxClass;
   List<String>? taxes;
+  ProductModel? product;
 
   LineItem({
     this.quantity,
@@ -31,6 +34,7 @@ class LineItem {
     this.price,
     this.taxClass,
     this.taxes,
+    this.product,
   });
 
   factory LineItem.fromJson(Map<String, dynamic> json) => LineItem(
@@ -46,9 +50,12 @@ class LineItem {
         variationId: json['variation_id'] as int?,
         sku: json['sku'] as String?,
         metaData: json['meta_data'] as List<String>?,
-        price: json['price'] as int?,
+        price: json['price'] as double?,
         taxClass: json['tax_class'] as String?,
         taxes: json['taxes'] as List<String>?,
+        product: json['product'] == null
+            ? null
+            : ProductModel.fromJson(json['product'] as Map<String, dynamic>),
       );
 
   Map<String, dynamic> toJson() => {
@@ -67,5 +74,6 @@ class LineItem {
         'price': price,
         'tax_class': taxClass,
         'taxes': taxes,
+        'product': product?.toJson(),
       };
 }
