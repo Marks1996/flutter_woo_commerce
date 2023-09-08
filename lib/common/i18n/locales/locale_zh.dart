@@ -136,6 +136,7 @@ Map<String, String> localeZh = {
   LocaleKeys.addressCompany: '国家',
   LocaleKeys.addressPhoneNumber: '电话号码',
   LocaleKeys.addressEmail: '电子邮件',
+  
   // 购物车
   LocaleKeys.gCartTitle: '我的购物车',
   LocaleKeys.gCartBtnSelectAll: '全选',
@@ -144,4 +145,22 @@ Map<String, String> localeZh = {
   LocaleKeys.gCartTextShippingCost: '配送费',
   LocaleKeys.gCartTextVocher: '代金券',
   LocaleKeys.gCartTextTotal: '合计',
+
+  // 下单 Checkout
+  LocaleKeys.placeOrderTitle: '确认订单',
+  LocaleKeys.placeOrderPayment: '支付方式',
+  LocaleKeys.placeOrderShippingAddress: '送货地址',
+  LocaleKeys.placeOrderQuantity: '数量',
+  LocaleKeys.placeOrderPrice: '价格',
+  LocaleKeys.placeOrderPriceShipping: '运费',
+  LocaleKeys.placeOrderPriceDiscount: '折扣',
+  LocaleKeys.placeOrderPriceVoucherCode: '代金券',
+  LocaleKeys.placeOrderPriceVoucherCodeEnter: '输入代金券',
+  LocaleKeys.placeOrderTotal: '小计',
+  LocaleKeys.placeOrderBtnPlaceOrder: '下单确认',
+
+  // 下单确认
+  LocaleKeys.orderConfirmationTitle: '已下订单',
+  LocaleKeys.orderConfirmationDesc: '您的订单已成功下达',
+  LocaleKeys.orderConfirmationBtnHome: '返回首页',
 };

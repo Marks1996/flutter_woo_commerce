@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_woo_commerce/common/index.dart';
+import 'package:flutter_woo_commerce/pages/index.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
@@ -45,6 +46,25 @@ class ProductDetailsController extends GetxController
   int _reviewsPage = 1;
   // 评论 页尺寸
   final int _reviewsLimit = 20;
+
+  // 立刻购买 checkout
+  void onCheckoutTap() async {
+    // 检查是否登录
+    if (!await UserService.to.checkIsLogin()) {
+      return;
+    }
+
+    // 检查空
+    if (product == null || product?.id == null) {
+      Loading.error("product is empty");
+      return;
+    }
+
+    // 立刻购买 checkout
+    ActionBottomSheet.barModel(
+      BuyNowPage(product: product!),
+    );
+  }
 
   // 加入购物车
   void onAddCartTap() async {

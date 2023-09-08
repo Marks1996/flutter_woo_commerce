@@ -163,8 +163,13 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
         onTap: controller.onAddCartTap, // 加入购物车事件
       ).expanded(),
       // 间距
-      // SizedBox(width: AppSpace.iconTextLarge),
-      // 立刻购买 Place Order
+      SizedBox(width: AppSpace.iconTextLarge),
+      // 立刻购买
+      ButtonWidget.primary(
+        LocaleKeys.gDetailBtnBuy.tr,
+        // 点击弹出购买窗口
+        onTap: controller.onCheckoutTap,
+      ).expanded(),
     ]
         .toRow(
           mainAxisSize: MainAxisSize.max,
