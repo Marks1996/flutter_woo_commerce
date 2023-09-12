@@ -5,6 +5,7 @@ export './request/user_login_req.dart';
 export './request/products_req.dart';
 export './request/reviews_req.dart';
 export './request/tags_req.dart';
+export './request/orders_req.dart';
 
 export './woo/user_profile_model/user_profile_model.dart';
 export './woo/category_model/category_model.dart';
