@@ -35,7 +35,10 @@ class OrderListPage extends GetView<OrderListController> {
       id: "order_list",
       builder: (_) {
         return Scaffold(
-          appBar: mainAppBarWidget(titleString: LocaleKeys.orderListTitle.tr),
+          appBar: mainAppBarWidget(
+            titleString: LocaleKeys.orderListTitle.tr,
+            context: context,
+          ),
           body: SafeArea(
             child: SmartRefresher(
               controller: controller.refreshController, // 刷新控制器

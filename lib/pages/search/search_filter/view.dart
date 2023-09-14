@@ -103,17 +103,18 @@ class SearchFilterPage extends GetView<SearchFilterController> {
           // 导航
           appBar: mainAppBarWidget(
             // 返回按钮
-            leading: ButtonWidget.icon(
-              IconWidget.icon(
-                Icons.arrow_back,
-                color: AppColors.primary,
-              ),
-              onTap: () => Get.back(),
-            ),
+            // leading: ButtonWidget.icon(
+            //   IconWidget.icon(
+            //     Icons.arrow_back,
+            //     color: AppColors.primary,
+            //   ),
+            //   onTap: () => Get.back(),
+            // ),
             // 输入文字
             hintText: LocaleKeys.searchPlaceholder.tr,
             // 点击事件
             onTap: () => Get.back(),
+            context: context,
           ),
           body: SafeArea(
             child: _buildView(),

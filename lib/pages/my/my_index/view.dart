@@ -213,7 +213,7 @@ class MyIndexPage extends GetView<MyIndexController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<MyIndexController>(
-      init: MyIndexController(),
+      init: Get.find<MyIndexController>(),
       id: "my_index",
       builder: (_) {
         return Scaffold(

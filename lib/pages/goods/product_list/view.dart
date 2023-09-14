@@ -40,6 +40,7 @@ class ProductListPage extends GetView<ProductListController> {
             titleString: controller.featured == true
                 ? LocaleKeys.gFlashSellTitle.tr
                 : LocaleKeys.gNewsTitle.tr,
+            context: context,
           ),
           body: SmartRefresher(
             controller: controller.refreshController, // 刷新控制器

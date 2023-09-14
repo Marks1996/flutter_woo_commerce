@@ -29,23 +29,13 @@ class MainController extends GetxController {
     // 读取用户 profile
     await UserService.to.getProfile();
 
-    // 测试用
-    // Get.toNamed(RouteNames.systemLogin);
     update(["main"]);
   }
-
-  void onTap() {}
-
-  // @override
-  // void onInit() {
-  //   super.onInit();
-  // }
 
   @override
   void onReady() {
     super.onReady();
     _initData();
-    // _jumpToPage();
   }
 
   // @override

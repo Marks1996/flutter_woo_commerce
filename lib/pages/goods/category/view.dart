@@ -106,6 +106,7 @@ class CategoryPage extends GetView<CategoryController> {
           // 顶部导航
           appBar: mainAppBarWidget(
             titleString: LocaleKeys.gCategoryTitle.tr,
+            context: context,
           ),
           // 内容
           body: SafeArea(

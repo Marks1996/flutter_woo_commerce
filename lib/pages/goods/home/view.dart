@@ -47,7 +47,7 @@ class HomePage extends GetView<HomeController> {
   // 轮播广告
   Widget _buildBanner() {
     return GetBuilder<HomeController>(
-            init: controller,
+            init: Get.find<HomeController>(),
             id: "home_banner",
             builder: (_) {
               return CarouselWidget(

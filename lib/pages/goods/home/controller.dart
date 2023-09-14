@@ -215,9 +215,9 @@ class HomeController extends GetxController {
   }
 
   @override
-  void onInit() {
+  void onInit() async {
     super.onInit();
-    _loadCacheData();
+    await _loadCacheData();
   }
 
   @override

@@ -122,11 +122,14 @@ class CartIndexPage extends GetView<CartIndexController> {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CartIndexController>(
-      init: CartIndexController(),
+      init: Get.find<CartIndexController>(),
       id: "cart_index",
       builder: (_) {
         return Scaffold(
-          appBar: mainAppBarWidget(titleString: LocaleKeys.gCartTitle.tr),
+          appBar: mainAppBarWidget(
+            titleString: LocaleKeys.gCartTitle.tr,
+            context: context,
+          ),
           body: SafeArea(
             child: _buildView(),
           ),

@@ -208,8 +208,9 @@ class _ProductDetailsViewGetX extends GetView<ProductDetailsController> {
         return Scaffold(
           // 导航
           appBar: mainAppBarWidget(
-              titleString:
-                  controller.product?.name ?? LocaleKeys.gDetailTitle.tr),
+            titleString: controller.product?.name ?? LocaleKeys.gDetailTitle.tr,
+            context: context,
+          ),
           // 内容
           body: SafeArea(
             child: _buildView(),

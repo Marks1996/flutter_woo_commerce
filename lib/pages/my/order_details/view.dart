@@ -245,8 +245,10 @@ class OrderDetailsPage extends GetView<OrderDetailsController> {
       id: "order_details",
       builder: (_) {
         return Scaffold(
-          appBar:
-              mainAppBarWidget(titleString: LocaleKeys.orderDetailsTitle.tr),
+          appBar: mainAppBarWidget(
+            titleString: LocaleKeys.orderDetailsTitle.tr,
+            context: context,
+          ),
           body: SafeArea(
             child: _buildView(),
           ),

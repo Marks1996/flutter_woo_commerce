@@ -4,15 +4,20 @@ import 'package:flutter_woo_commerce/common/index.dart';
 /// 主导航栏
 AppBar mainAppBarWidget({
   Key? key,
+  required BuildContext context,
   Function()? onTap, // 点击事件
   Widget? leading, // 左侧按钮
   String? hintText, // 输入框默认提示文字
   String? titleString, // 标题
   double? titleSpace, // 标题间距
   double? iconSize, // 图标大小
+  bool? automaticallyImplyLeading, // 是否自动返回
 }) {
+  final ModalRoute<dynamic>? parentRoute = ModalRoute.of(context);
+
   return AppBar(
-    leading: leading,
+    leading: leading ??
+        (parentRoute?.impliesAppBarDismissal ?? false ? BackButton() : null),
     titleSpacing: titleSpace ?? AppSpace.listItem,
     title: hintText != null
         ? InputWidget.textBorder(
